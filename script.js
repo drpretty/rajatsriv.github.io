@@ -1,15 +1,5 @@
-// Smooth scrolling for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// SPA navigation
 $(document).ready(function() {
+    // SPA navigation
     $('nav a').click(function() {
         var target = $(this).attr('href');
         $('section').hide();
@@ -18,38 +8,67 @@ $(document).ready(function() {
 
     // Show the home section by default
     $('section').hide();
-    $('#home').show();
+    $('#experience').show();
+
+    // Show navbar on hover
+    $('#site-title').hover(
+        function() {
+            $('#navbar').addClass('fade-in').show();
+        },
+        function() {
+            setTimeout(function() {
+                if (!$('#navbar').is(':hover')) {
+                    $('#navbar').hide();
+                }
+            }, 300);
+        }
+    );
+
+    // Load experience details into modal
+    $('.experience-card').click(function() {
+        var experience = $(this).data('experience');
+        var experienceDetails = getExperienceDetails(experience);
+        $('#experienceModalLabel').text(experienceDetails.title);
+        $('#experienceModal .modal-body').html(experienceDetails.content);
+        $('#experienceModal').modal('show');
+    });
 });
 
-// Experience Section content
-const experiences = [
-    {
-        title: 'Senior Associate Consultant at Whatfix',
-        period: 'June 2020 - August 2022',
-        description: 'Worked with customers to identify target audience needs and understand customer applications...',
-        icon: 'path/to/icon.png'
-    },
-    {
-        title: 'Procurement Analyst at Zycus',
-        period: 'July 2018 - February 2020',
-        description: 'Enabled project kickoff by packaging data, perception documents, and configuration materials for clients...',
-        icon: 'path/to/icon.png'
-    },
-    {
-        title: 'Consulting Intern at Cushman & Wakefield',
-        period: 'January 2018 - February 2018',
-        description: 'Collected information regarding clients\' business through shadowing, interviewing, and surveying...',
-        icon: 'path/to/icon.png'
-    }
-];
-
-experiences.forEach(exp => {
-    $('.chessboard').append(`
-        <div class="experience-card">
-            <img src="${exp.icon}" alt="Experience Icon">
-            <h3>${exp.title}</h3>
-            <p>${exp.period}</p>
-            <p>${exp.description}</p>
-        </div>
-    `);
-});
+// Experience details
+function getExperienceDetails(experience) {
+    var details = {
+        'wingify': {
+            title: 'Wingify',
+            content: `
+                <h3>Senior Consultant</h3>
+                <p><strong>Duration:</strong> Since 2023</p>
+                <p>As a Senior Consultant at Wingify, I respond to technical queries and provide solutions to prospects, contributing to customer success and product adoption...</p>
+            `
+        },
+        'leena-ai': {
+            title: 'Leena AI',
+            content: `
+                <h3>Business Analyst</h3>
+                <p><strong>Duration:</strong> September 2022 - April 2023</p>
+                <p>Speaheaded IT projects, prioritized client needs and ensured timely delivery. Facilitated discussions with business clients to define project scope and requirements...</p>
+            `
+        },
+        'whatfix': {
+            title: 'Whatfix',
+            content: `
+                <h3>Senior Associate Consultant</h3>
+                <p><strong>Duration:</strong> June 2020 - August 2022</p>
+                <p>Worked with customers to identify target audience needs and understand customer applications...</p>
+            `
+        },
+        'zycus': {
+            title: 'Zycus',
+            content: `
+                <h3>Procurement Analyst</h3>
+                <p><strong>Duration:</strong> July 2018 - February 2020</p>
+                <p>Enabled project kickoff by packaging data, perception documents, and configuration materials for clients...</p>
+            `
+        }
+    };
+    return details[experience];
+}
