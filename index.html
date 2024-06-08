@@ -11,8 +11,8 @@
 <body>
     <header class="bg-dark text-white py-3">
         <div class="container">
-            <h1 class="text-center">Rajat Srivastava</h1>
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <h1 id="site-title" class="text-center">Rajat Srivastava</h1>
+            <nav class="navbar navbar-expand-lg navbar-dark d-none" id="navbar">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -21,7 +21,6 @@
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                         <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -36,109 +35,58 @@
     </header>
 
     <div id="content">
-        <section id="home" class="text-center py-5 bg-light">
+        <section id="experience" class="text-center py-5 bg-light">
             <div class="container">
-                <h2>Welcome to My Personal Website</h2>
-                <p>Hi, I'm Rajat Srivastava, a problem solver with a passion for technology, AI, and creating meaningful solutions. Explore my site to learn more about my professional journey, projects, and personal interests.</p>
-            </div>
-        </section>
-
-        <section id="about" class="py-5">
-            <div class="container">
-                <h2 class="text-center">About Me</h2>
-                <p class="text-center">Welcome to my personal website! I am an experienced consultant, architect, and tech enthusiast based in Mumbai, India. With a diverse background in business analysis, digital adoption, and procurement, I am passionate about leveraging technology to drive innovation and improve user experiences.</p>
-            </div>
-        </section>
-
-        <section id="experience" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center">Experience</h2>
-                <div class="chessboard">
-                    <!-- Experience cards will go here -->
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="py-5">
-            <div class="container">
-                <h2 class="text-center">Portfolio</h2>
+                <h2>Experience</h2>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img class="card-img-top" src="path/to/image3.jpg" alt="Wingify">
+                    <div class="col-md-3">
+                        <div class="card experience-card" data-experience="wingify">
                             <div class="card-body">
                                 <h5 class="card-title">Wingify</h5>
-                                <p class="card-text">As a Senior Consultant at Wingify, I respond to technical queries and provide solutions to prospects, contributing to customer success and product adoption.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card experience-card" data-experience="leena-ai">
+                            <div class="card-body">
+                                <h5 class="card-title">Leena AI</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card experience-card" data-experience="whatfix">
+                            <div class="card-body">
+                                <h5 class="card-title">Whatfix</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card experience-card" data-experience="zycus">
+                            <div class="card-body">
+                                <h5 class="card-title">Zycus</h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
 
-        <section id="skills" class="py-5">
-            <div class="container">
-                <h2 class="text-center">Skills</h2>
-                <p class="text-center">I possess a wide range of skills in various domains, including front-end development, AI, business analysis, and more. My technical proficiency, combined with strong interpersonal skills, allows me to effectively collaborate and deliver impactful results.</p>
+    <!-- Modal for displaying detailed experience -->
+    <div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="experienceModalLabel">Experience Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Detailed experience content will be dynamically loaded here -->
+                </div>
             </div>
-        </section>
-
-        <section id="blog" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center">Blog</h2>
-                <p class="text-center">Read my blog to stay updated with my latest thoughts and insights on business strategies, architecture, self-help, technology, and gaming. I enjoy sharing my knowledge and engaging with a community of like-minded individuals.</p>
-            </div>
-        </section>
-
-        <section id="contact" class="py-5">
-            <div class="container">
-                <h2 class="text-center">Contact</h2>
-                <p class="text-center">If you'd like to get in touch with me, feel free to reach out through the contact form below. You can also connect with me on LinkedIn and other social media platforms.</p>
-                <form action="https://formspree.io/f/{your_form_id}" method="POST" class="mx-auto" style="max-width: 600px;">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="heta" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center">Heta</h2>
-                <p class="text-center">This section is dedicated to Heta, showcasing our journey and special moments together. Stay tuned for more updates and stories.</p>
-            </div>
-        </section>
-
-        <section id="ai" class="py-5">
-            <div class="container">
-                <h2 class="text-center">AI Interaction</h2>
-                <p class="text-center">Discover a more fun and interactive way to interface with AI. This section will feature various AI projects and demos, highlighting my work in the field.</p>
-            </div>
-        </section>
-
-        <section id="tech" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center">Tech I Own</h2>
-                <p class="text-center">Here you will find a showcase of the technology and gadgets I use, from my Alienware laptop to other tech tools that enhance my productivity and gaming experience.</p>
-            </div>
-        </section>
-
-        <section id="hobbies" class="py-5">
-            <div class="container">
-                <h2 class="text-center">Hobbies</h2>
-                <p class="text-center">In my free time, I enjoy gaming, chess, and exploring new technologies. This section provides a glimpse into my hobbies and how I spend my leisure time.</p>
-            </div>
-        </section>
+        </div>
     </div>
 
     <footer class="bg-dark text-white py-3">
