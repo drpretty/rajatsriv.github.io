@@ -4,6 +4,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -28,43 +29,54 @@ footer {
 }
 
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
 }
 
-.card img {
-    height: 200px;
-    object-fit: cover;
+.card:hover {
+    transform: scale(1.05);
 }
 
-.chessboard {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    background-image: url('path/to/chessboard-image.jpg');
-    background-size: cover;
-    padding: 20px;
+#site-title:hover + #navbar,
+#navbar:hover {
+    display: block !important;
+    opacity: 1;
+    transition: opacity 0.3s;
 }
 
-.experience-card {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
+#navbar {
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.experience-card h3 {
-    margin-top: 0;
+.modal .modal-body {
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-.experience-card img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide-in-up {
+    animation: slideInUp 1s ease-in-out;
 }
