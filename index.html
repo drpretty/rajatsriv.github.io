@@ -43,7 +43,13 @@
     <section id="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
-            <p>Explore my professional portfolio to see the projects I've worked on, including House of Fit, the riverside resort, and my role at Wingify. Each project highlights my ability to deliver high-quality solutions and drive business success.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Wingify</h3>
+                    <img src="path/to/image3.jpg" alt="Wingify">
+                    <p>As a Senior Consultant at Wingify, I respond to technical queries and provide solutions to prospects, contributing to customer success and product adoption.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -66,6 +72,18 @@
             <h2>Contact</h2>
             <p>If you'd like to get in touch with me, feel free to reach out through the contact form below. You can also connect with me on LinkedIn and other social media platforms.</p>
             <!-- Add contact form or email link here -->
+            <form action="https://formspree.io/f/{your_form_id}" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
 
