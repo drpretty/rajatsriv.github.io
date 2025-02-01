@@ -1,100 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajat Srivastava - Personal Website</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batman: The Dark Knight</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="bg-dark text-white py-3">
-        <div class="container">
-            <h1 id="site-title" class="text-center">Rajat Srivastava</h1>
-            <nav class="navbar navbar-expand-lg navbar-dark d-none" id="navbar">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#heta">Heta</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#ai">AI Interaction</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tech">Tech I Own</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+  <!-- Header & Navigation -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="assets/batman-logo.png" alt="Batman Logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div id="content">
-        <section id="experience" class="text-center py-5 bg-light">
-            <div class="container">
-                <h2>Experience</h2>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card experience-card" data-experience="wingify">
-                            <div class="card-body">
-                                <h5 class="card-title">Wingify</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card experience-card" data-experience="leena-ai">
-                            <div class="card-body">
-                                <h5 class="card-title">Leena AI</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card experience-card" data-experience="whatfix">
-                            <div class="card-body">
-                                <h5 class="card-title">Whatfix</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card experience-card" data-experience="zycus">
-                            <div class="card-body">
-                                <h5 class="card-title">Zycus</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to the Dark Knight's World</h1>
+      <p>Discover the legacy and mystery behind Gotham's guardian.</p>
+      <a href="about.html" class="cta-button">Learn More</a>
     </div>
+  </section>
 
-    <!-- Modal for displaying detailed experience -->
-    <div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="experienceModalLabel">Experience Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Detailed experience content will be dynamically loaded here -->
-                </div>
-            </div>
-        </div>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <img src="assets/batcave-icon.png" alt="Batcave" />
+      <h3>Batcave</h3>
+      <p>Explore the high-tech hub of Batman’s operations.</p>
     </div>
+    <div class="feature">
+      <img src="assets/batmobile-icon.png" alt="Batmobile" />
+      <h3>Batmobile</h3>
+      <p>Discover the state-of-the-art vehicle engineered for justice.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/batsignal-icon.png" alt="Bat-Signal" />
+      <h3>Bat-Signal</h3>
+      <p>Experience the call to arms that lights up Gotham’s sky.</p>
+    </div>
+  </section>
 
-    <footer class="bg-dark text-white py-3">
-        <p class="text-center mb-0">&copy; 2024 Rajat Srivastava. All rights reserved.</p>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Batman Fan Site. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
